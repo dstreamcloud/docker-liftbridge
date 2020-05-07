@@ -1,4 +1,4 @@
-FROM golang:1.14 
+FROM golang:1.14 AS build
 ENV GO111MODULE on
 RUN go get github.com/liftbridge-io/liftbridge
 RUN go get github.com/grpc-ecosystem/grpc-health-probe
