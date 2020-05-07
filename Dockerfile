@@ -7,5 +7,6 @@ RUN go get github.com/grpc-ecosystem/grpc-health-probe
 FROM debian:10
 COPY --from=build /go/bin/liftbridge /liftbridge
 COPY --from=build /go/bin/grpc-health-probe /grpc-health-probe
-ENTRYPOINT ["/liftbridge"]
+COPY entrypoint.sh /entrypoint.sh
 
+ENTRYPOINT ["/entrypoint.sh"]
