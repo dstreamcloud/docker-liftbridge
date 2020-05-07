@@ -8,5 +8,6 @@ FROM debian:10
 COPY --from=build /go/bin/liftbridge /liftbridge
 COPY --from=build /go/bin/grpc-health-probe /grpc-health-probe
 COPY entrypoint.sh /entrypoint.sh
+RUN chmod a+x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
